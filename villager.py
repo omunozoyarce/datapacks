@@ -1,87 +1,61 @@
-import json
+# summon villager ~ ~1 ~ 
+# {VillagerData:
+#     {profession:farmer,
+#      level:2,
+#      type:plains},
+#     PersistenceRequired:1,
+#     Offers:{Recipes:[{buy:{id:acacia_boat,Count:1},sell:{id:acacia_chest_boat,Count:1},rewardExp:0b,maxUses:9999999}]}}
 
-# armor bookseller 
-villager = ''' {Brain: {memories: {}}, 
-                HurtByTimestamp: 0, 
-                Attributes: 
-                    [{Base: 48.0d, Modifiers: 
-                    [{Amount: 0.06572175063694345d, Operation: 1, UUID: 
-                    [I; -1306545626, 1395411539, -1563487579, 374214545], Name: "Random spawn bonus"}], 
-                    Name: "minecraft:generic.follow_range"}, {Base: 0.5d, Name: "minecraft:generic.movement_speed"}], 
-                FoodLevel: 0b, 
-                Invulnerable: 0b, 
-                FallFlying: 0b, 
-                ForcedAge: 0, 
-                Gossips: [], 
-                PortalCooldown: 0, 
-                AbsorptionAmount: 0.0f, 
-                LastRestock: 0L, 
-                FallDistance: 0.0f, 
-                DeathTime: 0s, 
-                Xp: 1, 
-                LastGossipDecay: 487441L, 
-                HandDropChances: [0.085f, 0.085f], 
-                PersistenceRequired: 0b, 
-                UUID: [I; -405135149, 1315390707, -1192280152, -877103080], 
-                Tags: ["ve.checked"], 
-                Age: 0, 
-                Motion: [0.0d, -0.0784000015258789d, 0.0d], 
-                Health: 20.0f, 
-                LeftHanded: 0b, 
-                Air: 300s, 
-                OnGround: 1b, 
-                Offers: 
-                    {Recipes: 
-                        [{maxUses: 2147483647, 
-                            buyB: {id: "minecraft:emerald", Count: 16b}, 
-                            buy: {id: "minecraft:diamond_helmet", Count: 1b, tag: {Damage: 0}}, 
-                            sell: {id: "minecraft:enchanted_book", Count: 1b, tag: {RepairCost: 7, 
-                            StoredEnchantments: 
-                                [{lvl: 3s, id: "minecraft:respiration"}, 
-                                {lvl: 1s, id: "minecraft:aqua_affinity"}, 
-                                {lvl: 4s, id: "minecraft:protection"}, 
-                                {lvl: 3s, id: "minecraft:unbreaking"}, 
-                                {lvl: 1s, id: "minecraft:mending"}], 
-                            display: {Name: '{"text":"Helm. Prot."}'}}}, 
-                            xp: 1, 
-                            uses: 0, 
-                            priceMultiplier: 0.0f, 
-                            specialPrice: 0, 
-                            demand: 0, 
-                            rewardExp: 1b}, 
-                        
-                        {maxUses: 2147483647, 
-                            buyB: {id: "minecraft:emerald", Count: 16b}, 
-                            buy: {id: "minecraft:diamond_helmet", Count: 1b, tag: {Damage: 0}}, 
-                            sell: {id: "minecraft:enchanted_book", Count: 1b, tag: {RepairCost: 7, 
-                            StoredEnchantments: 
-                                [{lvl: 3s, id: "minecraft:respiration"},
-                                {lvl: 1s, id: "minecraft:aqua_affinity"},
-                                {lvl: 4s, id: "minecraft:blast_protection"},
-                                {lvl: 3s, id: "minecraft:unbreaking"},
-                                {lvl: 1s, id: "minecraft:mending"}],
-                            display: {Name: '{"text":"Helm. Blst."}'}}},
-                            xp: 1,
-                            uses: 0,
-                            priceMultiplier: 0.0f,
-                            specialPrice: 0, demand: 0, rewardExp: 1b},
-                        
-                        {maxUses: 2147483647, 
-                            buyB: {id: "minecraft:emerald", Count: 16b}, 
-                            buy: {id: "minecraft:diamond_helmet", Count: 1b, tag: {Damage: 0}}, 
-                            sell: {id: "minecraft:enchanted_book", Count: 1b, tag: {RepairCost: 7, 
-                            StoredEnchantments: 
-                                [{lvl: 3s, id: "minecraft:respiration"}, 
-                                {lvl: 1s, id: "minecraft:aqua_affinity"}, 
-                                {lvl: 4s, id: "minecraft:projectile_protection"}, 
-                                {lvl: 3s, id: "minecraft:unbreaking"}, 
-                                {lvl: 1s, id: "minecraft:mending"}], 
-                            display: {Name: '{"text":"Helm. Proj."}'}}}, 
-                            xp: 1, 
-                            uses: 0, 
-                            priceMultiplier: 0.0f, 
-                            specialPrice: 0, 
-                            demand: 0, 
-                            rewardExp: 1b}, 
-                        
-                        {maxUses: 2147483647, buyB: {id: "minecraft:emerald", Count: 16b}, buy: {id: "minecraft:diamond_helmet", Count: 1b, tag: {Damage: 0}}, sell: {id: "minecraft:enchanted_book", Count: 1b, tag: {RepairCost: 7, StoredEnchantments: [{lvl: 3s, id: "minecraft:respiration"}, {lvl: 1s, id: "minecraft:aqua_affinity"}, {lvl: 4s, id: "minecraft:fire_protection"}, {lvl: 3s, id: "minecraft:unbreaking"}, {lvl: 1s, id: "minecraft:mending"}], display: {Name: '{"text":"Helm. Fire."}'}}}, xp: 1, uses: 0, priceMultiplier: 0.0f, specialPrice: 0, demand: 0, rewardExp: 1b}, {maxUses: 2147483647, buyB: {id: "minecraft:emerald", Count: 16b}, buy: {id: "minecraft:diamond_chestplate", Count: 1b, tag: {Damage: 0}}, sell: {id: "minecraft:enchanted_book", Count: 1b, tag: {RepairCost: 3, StoredEnchantments: [{lvl: 4s, id: "minecraft:protection"}, {lvl: 3s, id: "minecraft:unbreaking"}, {lvl: 1s, id: "minecraft:mending"}], display: {Name: '{"text":"Chst. Prot."}'}}}, xp: 1, uses: 0, priceMultiplier: 0.0f, specialPrice: 0, demand: 0, rewardExp: 1b}, {maxUses: 2147483647, buyB: {id: "minecraft:emerald", Count: 16b}, buy: {id: "minecraft:diamond_chestplate", Count: 1b, tag: {Damage: 0}}, sell: {id: "minecraft:enchanted_book", Count: 1b, tag: {RepairCost: 3, StoredEnchantments: [{lvl: 4s, id: "minecraft:blast_protection"}, {lvl: 3s, id: "minecraft:unbreaking"}, {lvl: 1s, id: "minecraft:mending"}], display: {Name: '{"text":"Chst. Blst."}'}}}, xp: 1, uses: 0, priceMultiplier: 0.0f, specialPrice: 0, demand: 0, rewardExp: 1b}, {maxUses: 2147483647, buyB: {id: "minecraft:emerald", Count: 16b}, buy: {id: "minecraft:diamond_chestplate", Count: 1b, tag: {Damage: 0}}, sell: {id: "minecraft:enchanted_book", Count: 1b, tag: {RepairCost: 3, StoredEnchantments: [{lvl: 4s, id: "minecraft:projectile_protection"}, {lvl: 3s, id: "minecraft:unbreaking"}, {lvl: 1s, id: "minecraft:mending"}], display: {Name: '{"text":"Chst. Proj,"}'}}}, xp: 1, uses: 0, priceMultiplier: 0.0f, specialPrice: 0, demand: 0, rewardExp: 1b}, {maxUses: 2147483647, buyB: {id: "minecraft:emerald", Count: 16b}, buy: {id: "minecraft:diamond_chestplate", Count: 1b, tag: {Damage: 0}}, sell: {id: "minecraft:enchanted_book", Count: 1b, tag: {RepairCost: 3, StoredEnchantments: [{lvl: 4s, id: "minecraft:fire_protection"}, {lvl: 3s, id: "minecraft:unbreaking"}, {lvl: 1s, id: "minecraft:mending"}], display: {Name: '{"text":"Chst. Fire."}'}}}, xp: 1, uses: 0, priceMultiplier: 0.0f, specialPrice: 0, demand: 0, rewardExp: 1b}, {maxUses: 2147483647, buyB: {id: "minecraft:emerald", Count: 16b}, buy: {id: "minecraft:diamond_leggings", Count: 1b, tag: {Damage: 0}}, sell: {id: "minecraft:enchanted_book", Count: 1b, tag: {RepairCost: 3, StoredEnchantments: [{lvl: 3s, id: "minecraft:swift_sneak"}, {lvl: 4s, id: "minecraft:protection"}, {lvl: 3s, id: "minecraft:unbreaking"}, {lvl: 1s, id: "minecraft:mending"}], display: {Name: '{"text":"Legs. Prot."}'}}}, xp: 1, uses: 0, priceMultiplier: 0.0f, specialPrice: 0, demand: 0, rewardExp: 1b}, {maxUses: 2147483647, buyB: {id: "minecraft:emerald", Count: 16b}, buy: {id: "minecraft:diamond_leggings", Count: 1b, tag: {Damage: 0}}, sell: {id: "minecraft:enchanted_book", Count: 1b, tag: {RepairCost: 3, StoredEnchantments: [{lvl: 3s, id: "minecraft:swift_sneak"}, {lvl: 4s, id: "minecraft:blast_protection"}, {lvl: 3s, id: "minecraft:unbreaking"}, {lvl: 1s, id: "minecraft:mending"}], display: {Name: '{"text":"Legs. Blst."}'}}}, xp: 1, uses: 0, priceMultiplier: 0.0f, specialPrice: 0, demand: 0, rewardExp: 1b}, {maxUses: 2147483647, buyB: {id: "minecraft:emerald", Count: 16b}, buy: {id: "minecraft:diamond_leggings", Count: 1b, tag: {Damage: 0}}, sell: {id: "minecraft:enchanted_book", Count: 1b, tag: {RepairCost: 3, StoredEnchantments: [{lvl: 3s, id: "minecraft:swift_sneak"}, {lvl: 4s, id: "minecraft:projectile_protection"}, {lvl: 3s, id: "minecraft:unbreaking"}, {lvl: 1s, id: "minecraft:mending"}], display: {Name: '{"text":"Legs. Proj."}'}}}, xp: 1, uses: 0, priceMultiplier: 0.0f, specialPrice: 0, demand: 0, rewardExp: 1b}, {maxUses: 2147483647, buyB: {id: "minecraft:emerald", Count: 16b}, buy: {id: "minecraft:diamond_leggings", Count: 1b, tag: {Damage: 0}}, sell: {id: "minecraft:enchanted_book", Count: 1b, tag: {RepairCost: 3, StoredEnchantments: [{lvl: 3s, id: "minecraft:swift_sneak"}, {lvl: 4s, id: "minecraft:fire_protection"}, {lvl: 3s, id: "minecraft:unbreaking"}, {lvl: 1s, id: "minecraft:mending"}], display: {Name: '{"text":"Legs. Fire."}'}}}, xp: 1, uses: 0, priceMultiplier: 0.0f, specialPrice: 0, demand: 0, rewardExp: 1b}, {maxUses: 2147483647, buyB: {id: "minecraft:emerald", Count: 16b}, buy: {id: "minecraft:diamond_boots", Count: 1b, tag: {Damage: 0}}, sell: {id: "minecraft:enchanted_book", Count: 1b, tag: {RepairCost: 15, StoredEnchantments: [{lvl: 4s, id: "minecraft:protection"}, {lvl: 3s, id: "minecraft:depth_strider"}, {lvl: 3s, id: "minecraft:soul_speed"}, {lvl: 4s, id: "minecraft:feather_falling"}, {lvl: 3s, id: "minecraft:unbreaking"}, {lvl: 1s, id: "minecraft:mending"}], display: {Name: '{"text":"Boot. Prot. Dpth."}'}}}, xp: 1, uses: 0, priceMultiplier: 0.0f, specialPrice: 0, demand: 0, rewardExp: 1b}, {maxUses: 2147483647, buyB: {id: "minecraft:emerald", Count: 16b}, buy: {id: "minecraft:diamond_boots", Count: 1b, tag: {Damage: 0}}, sell: {id: "minecraft:enchanted_book", Count: 1b, tag: {RepairCost: 15, StoredEnchantments: [{lvl: 4s, id: "minecraft:blast_protection"}, {lvl: 3s, id: "minecraft:depth_strider"}, {lvl: 3s, id: "minecraft:soul_speed"}, {lvl: 4s, id: "minecraft:feather_falling"}, {lvl: 3s, id: "minecraft:unbreaking"}, {lvl: 1s, id: "minecraft:mending"}], display: {Name: '{"text":"Boot. Blst. Dpth."}'}}}, xp: 1, uses: 0, priceMultiplier: 0.0f, specialPrice: 0, demand: 0, rewardExp: 1b}, {maxUses: 2147483647, buyB: {id: "minecraft:emerald", Count: 16b}, buy: {id: "minecraft:diamond_boots", Count: 1b, tag: {Damage: 0}}, sell: {id: "minecraft:enchanted_book", Count: 1b, tag: {RepairCost: 15, StoredEnchantments: [{lvl: 4s, id: "minecraft:projectile_protection"}, {lvl: 3s, id: "minecraft:depth_strider"}, {lvl: 3s, id: "minecraft:soul_speed"}, {lvl: 4s, id: "minecraft:feather_falling"}, {lvl: 3s, id: "minecraft:unbreaking"}, {lvl: 1s, id: "minecraft:mending"}], display: {Name: '{"text":"Boot. Proj. Dpth."}'}}}, xp: 1, uses: 0, priceMultiplier: 0.0f, specialPrice: 0, demand: 0, rewardExp: 1b}, {maxUses: 2147483647, buyB: {id: "minecraft:emerald", Count: 16b}, buy: {id: "minecraft:diamond_boots", Count: 1b, tag: {Damage: 0}}, sell: {id: "minecraft:enchanted_book", Count: 1b, tag: {RepairCost: 15, StoredEnchantments: [{lvl: 4s, id: "minecraft:fire_protection"}, {lvl: 3s, id: "minecraft:depth_strider"}, {lvl: 3s, id: "minecraft:soul_speed"}, {lvl: 4s, id: "minecraft:feather_falling"}, {lvl: 3s, id: "minecraft:unbreaking"}, {lvl: 1s, id: "minecraft:mending"}], display: {Name: '{"text":"Boot. Fire. Dpth."}'}}}, xp: 1, uses: 0, priceMultiplier: 0.0f, specialPrice: 0, demand: 0, rewardExp: 1b}, {maxUses: 2147483647, buyB: {id: "minecraft:emerald", Count: 16b}, buy: {id: "minecraft:diamond_boots", Count: 1b, tag: {Damage: 0}}, sell: {id: "minecraft:enchanted_book", Count: 1b, tag: {RepairCost: 15, StoredEnchantments: [{lvl: 4s, id: "minecraft:protection"}, {lvl: 2s, id: "minecraft:frost_walker"}, {lvl: 3s, id: "minecraft:soul_speed"}, {lvl: 4s, id: "minecraft:feather_falling"}, {lvl: 3s, id: "minecraft:unbreaking"}, {lvl: 1s, id: "minecraft:mending"}], display: {Name: '{"text":"Boot. Prot. Frst."}'}}}, xp: 1, uses: 0, priceMultiplier: 0.0f, specialPrice: 0, demand: 0, rewardExp: 1b}, {maxUses: 2147483647, buyB: {id: "minecraft:emerald", Count: 16b}, buy: {id: "minecraft:diamond_boots", Count: 1b, tag: {Damage: 0}}, sell: {id: "minecraft:enchanted_book", Count: 1b, tag: {RepairCost: 15, StoredEnchantments: [{lvl: 4s, id: "minecraft:blast_protection"}, {lvl: 2s, id: "minecraft:frost_walker"}, {lvl: 3s, id: "minecraft:soul_speed"}, {lvl: 4s, id: "minecraft:feather_falling"}, {lvl: 3s, id: "minecraft:unbreaking"}, {lvl: 1s, id: "minecraft:mending"}], display: {Name: '{"text":"Boot. Blst. Frst."}'}}}, xp: 1, uses: 0, priceMultiplier: 0.0f, specialPrice: 0, demand: 0, rewardExp: 1b}, {maxUses: 2147483647, buyB: {id: "minecraft:emerald", Count: 16b}, buy: {id: "minecraft:diamond_boots", Count: 1b, tag: {Damage: 0}}, sell: {id: "minecraft:enchanted_book", Count: 1b, tag: {RepairCost: 15, StoredEnchantments: [{lvl: 4s, id: "minecraft:projectile_protection"}, {lvl: 2s, id: "minecraft:frost_walker"}, {lvl: 3s, id: "minecraft:soul_speed"}, {lvl: 4s, id: "minecraft:feather_falling"}, {lvl: 3s, id: "minecraft:unbreaking"}, {lvl: 1s, id: "minecraft:mending"}], display: {Name: '{"text":"Boot. Proj. Frst."}'}}}, xp: 1, uses: 0, priceMultiplier: 0.0f, specialPrice: 0, demand: 0, rewardExp: 1b}, {maxUses: 2147483647, buyB: {id: "minecraft:emerald", Count: 16b}, buy: {id: "minecraft:diamond_boots", Count: 1b, tag: {Damage: 0}}, sell: {id: "minecraft:enchanted_book", Count: 1b, tag: {RepairCost: 15, StoredEnchantments: [{lvl: 4s, id: "minecraft:fire_protection"}, {lvl: 2s, id: "minecraft:frost_walker"}, {lvl: 3s, id: "minecraft:soul_speed"}, {lvl: 4s, id: "minecraft:feather_falling"}, {lvl: 3s, id: "minecraft:unbreaking"}, {lvl: 1s, id: "minecraft:mending"}], display: {Name: '{"text":"Boot. Fire. Frst."}'}}}, xp: 1, uses: 0, priceMultiplier: 0.0f, specialPrice: 0, demand: 0, rewardExp: 1b}]}, Rotation: [-113.91121f, 0.0f], HandItems: [{}, {}], RestocksToday: 0, ArmorDropChances: [0.085f, 0.085f, 0.085f, 0.085f], CustomName: '"Armor Bookseller"', Pos: [152.5d, 71.0d, 2856.5d], Fire: -1s, ArmorItems: [{}, {}, {}, {}], CanPickUpLoot: 1b, VillagerData: {profession: "minecraft:armorer", level: 5, type: "minecraft:plains"}, HurtTime: 0s, Inventory: []}'''
+#egg
+# give @p villager_spawn_egg nbt:
+# {EntityTag:{VillagerData:{type:plains,profession:farmer,level:2},Offers:{Recipes:[{maxUses:1,buy:{id:acacia_button,Count:1},buyB:{id:acacia_door,Count:1}}]}}} 1
+
+
+class Villager():
+
+    def __init__(self, villager):
+        self.villager = villager
+        self.profession = None
+        self.level = None
+        # self.type = None{EntityTag:{VillagerData:{type:plains,profession:farmer,level:2},Offers:{Recipes:[{maxUses:1,buy:{id:acacia_button,Count:1},buyB:{id:acacia_door,Count:1}}]}}} 1
+
+class VillagerTrade():
+    
+    def __init__(self, buy: tuple, sell: str, reward_exp: int = 0, max_uses: int = 9999999):
+        self.buy = buy[0]
+        self.buyB = buy[1]
+        '''
+        The format of self.buy is a tuple with len(buy) == 2
+        buy[0] is the first item, buy[1] is the second item
+        buy[0] and buy[1] are both tuples with len(buy[0]) == 2 and len(buy[1]) == 2
+        buy[0][0] is the item id, buy[0][1] is the item count
+        buy[1][0] is the item id, buy[1][1] is the item count
+        '''
+        self.sell = sell
+        self.rewardExp = reward_exp
+        self.maxUses = max_uses
+        
+    def __str__(self):
+        return f'''{{maxUses: {self.maxUses}, 
+buyB: {self.buyB[0] if self.buyB else None}, 
+buyBQuantity: {self.buyB[1] if self.buyB else 1}, 
+buy: {self.buy[0] if self.buy else None}, 
+buyQuantity: {self.buy[1] if self.buy else 1},
+sell: {self.sell}, 
+rewardExp: {self.rewardExp}b}}
+'''
+
+class Item():
+        def __init__(self, id: str, is_enchanted=False, enchantments=None):
+            self.id = id 
+            self.is_enchanted = is_enchanted
+            self.enchantments = enchantments if is_enchanted else None
+    
+        def __str__(self):
+            return f'''{{id: "{self.id}",
+Count: 1b,
+tag: {self.enchantments if self.is_enchanted else None}}}
+'''
+
+if __name__ == "__main__":
+    item = Item("minecraft:enchanted_book", True, "efficiency")
