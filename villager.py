@@ -132,6 +132,8 @@ class Enchantment():
         self.level = level
     def __str__(self):
         return f'{{lvl:{self.level}s, id:"{self.id}"}}'
+    def name(self):
+        return self.id
 
 
 
