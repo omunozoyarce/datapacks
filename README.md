@@ -8,3 +8,6 @@ It involves using python to create item classes, to then copy them and put them 
 - Method to create custom villagers
 - Error handling
 - RegEx for easier use
+
+### Current Villagers:
+Helmet Bookmaster

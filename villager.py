@@ -70,10 +70,13 @@ class Item():
     def __init__(self, id: str, name: str = None, color : str = None, enchantments: list = []):
         self.id = id 
         
-        if name and color:
-            self.name = f"display:{{Name:'{{\"text\":\"{name}\", \"color\":\"{color}\"}}'}}"
-        elif name and not color:
-            self.name = f"display:{{Name:'{{\"text\":\"{name}\"}}'}}" if name else None        
+        if color:
+            if name:
+                self.name = f"display:{{Name:'{{\"text\":\"{name}\", \"color\":\"{color}\"}}'}}"
+            else:
+                self.name = f"display:{{Name:'{{\"color\":\"{color}\"}}'}}"
+        elif name:
+            self.name = f"display:{{Name:'{{\"text\":\"{name}\"}}'}}"
         else:
             self.name = None
         
@@ -94,29 +97,32 @@ class Item():
     def give_item(self):
         if self.enchantments == [] and self.name != None:
             return f"give @p {self.id}{{{self.name}}}"
-        elif self.enchantments != [] and self.name == None:
-            return f"give @p {self.id}{{{self.enchantments}}}"
         elif self.enchantments == [] and self.name == None:
             return f"give @p {self.id}"
-        return f"give @p {self.id}{{{self.name}, {self.enchantments}}}"
+        elif self.enchantments != [] and self.name != None:
+            return f"give @p {self.id}{{{self.name}, {self.enchantments}}}"
+        elif self.enchantments != [] and self.name == None:
+            return f"give @p {self.id}{{{self.enchantments}}}"
     
     def __repr__(self):
         if self.enchantments == [] and self.name != None:
             return f"{{id:{self.id},name:{self.name}}}"
-        elif self.enchantments != [] and self.name == None:
-            return f"{{id:{self.id},{self.enchantments}}}"
         elif self.enchantments == [] and self.name == None:
             return f"{{id:{self.id}}}"
-        return f"{{id:{self.id},name:{self.name},{self.enchantments}}}"
-    
+        elif self.enchantments != [] and self.name != None:
+            return f"{{id:{self.id},name:{self.name},enchantments:{self.enchantments}}}"
+        elif self.enchantments != [] and self.name == None:
+            return f"{{id:{self.id},enchantments:{self.enchantments}}}"
+
     def tag(self, count = 1):
         if self.enchantments == [] and self.name != None:
             return f"{{id:\"{self.id}\",Count:{count},tag:{{{self.name}}}}}"
-        if self.enchantments != [] and self.name == None:
-            return f"{{id:\"{self.id}\",Count:{count},tag:{{{self.enchantments}}}}}"
-        if self.enchantments == [] and self.name == None:
+        elif self.enchantments == [] and self.name == None:
             return f"{{id:\"{self.id}\",Count:{count}}}"
-        return f"{{id:\"{self.id}\",Count:{count},tag:{{{self.name}, {self.enchantments}}}}}"
+        elif self.enchantments != [] and self.name == None:
+            return f"{{id:\"{self.id}\",Count:{count},tag:{{{self.enchantments}}}}}"
+        elif self.enchantments != [] and self.name != None:
+            return f"{{id:\"{self.id}\",Count:{count},tag:{{{self.name}, {self.enchantments}}}}}"
 
 
 
@@ -175,4 +181,5 @@ class VillagerTrade():
 
 
 if __name__ == "__main__":
-    print(":3")
+    item = Item("minecraft:dirt", "fart", color = "gold")
+    pyperclip.copy(item.give_item())
