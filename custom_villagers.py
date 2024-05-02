@@ -125,7 +125,7 @@ pet_master = Villager("Pet Master", color="light_purple", profession="butcher", 
 # construction master
 nature_master_table = []
 nature = ["grass_block","podzol","mycelium","dirt","mud","clay","gravel","sand","red_sand","ice","snow_block",
-          "moss_block","stone","deepslate","blackstone","basalt","smooth_basalt","andesite","diorite","granite","calcite","tuff","dripstone_block",
+          "moss_block","stone", "cobblestone","deepslate","cobbled_deepslate","blackstone","basalt","smooth_basalt","andesite","diorite","granite","calcite","tuff","dripstone_block",
           "prismarine","dark_prismarine","amethyst_block","lantern","soul_lantern"]
 for block in nature:
     nature_master_table.append(VillagerTrade(("emerald"), None, sell=(block,16)))
@@ -187,5 +187,7 @@ emerald_master_table.append(VillagerTrade(("stick",32), None, sell=("emerald",1)
 emerald_master = Villager("Emerald Master", color="light_purple", profession="fletcher", level=5, trades=emerald_master_table, ai=True)
 
 
-legs = Item("diamond_leggings", "Perfect Leggings", color="gold", enchantments=[protection, swift_sneak, mending, unbreaking])
-pyperclip.copy(legs.give_item())
+axe = Item("diamond_shovel","Tragic Allium", "dark_purple", enchantments=[efficiency,silk_touch,unbreaking, mending])
+print(axe.give_item())
+pyperclip.copy(axe.give_item())
+give @p diamond_shovel{display:{Name:'{"text":"Tragic Allium", "color":"dark_purple"}'},Damage:449, Enchantments:[{lvl:5s, id:"minecraft:efficiency"},{lvl:1s, id:"minecraft:silk_touch"},{lvl:3s, id:"minecraft:unbreaking"},{lvl:1s, id:"minecraft:mending"}]}
